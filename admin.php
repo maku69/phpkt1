@@ -54,8 +54,6 @@ if (isset($_FILES['pilt1']) && isset($_FILES['pilt2'])) {
     if (move_uploaded_file($_FILES['pilt1']['tmp_name'], $uploadFile1) &&
         move_uploaded_file($_FILES['pilt2']['tmp_name'], $uploadFile2)) {
         echo '<div class="alert alert-success" role="alert">Pildid on üles laaditud.</div>';
-        // Salvestab pildifailide teed
-        file_put_contents('piltide_teed.txt', $uploadFile1 . PHP_EOL . $uploadFile2);
     } else {
         echo '<div class="alert alert-danger" role="alert">Piltide üleslaadimine ebaõnnestus.</div>';
     }
